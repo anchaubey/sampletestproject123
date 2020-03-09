@@ -32,8 +32,12 @@ Every time a user executes the job, they will have to provide the new folder pat
 The post build script to copy the new build is below:-
 
 #!/bin/bash
+
 pwd
+
 NEWDIR=`mkdir -p $DIR-$(date +%H-%M-%S)`
+
 cp -r /var/lib/jenkins/workspace/sample-project/*.jar $NEWDIR/
+
 
 $DIR is what the user will provide when the job is executed.
